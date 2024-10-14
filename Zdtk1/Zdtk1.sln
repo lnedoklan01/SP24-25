@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zdtk1", "Zdtk1\Zdtk1.vcxproj", "{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Debug|x64.ActiveCfg = Debug|x64
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Debug|x64.Build.0 = Debug|x64
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Debug|x86.ActiveCfg = Debug|Win32
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Debug|x86.Build.0 = Debug|Win32
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Release|x64.ActiveCfg = Release|x64
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Release|x64.Build.0 = Release|x64
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Release|x86.ActiveCfg = Release|Win32
+		{FABAE03F-62F4-4EE7-9EBF-0F10CF09DBBD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFC94C57-FD63-41B3-A8F9-B64E9B2250B4}
+	EndGlobalSection
+EndGlobal
