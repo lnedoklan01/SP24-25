@@ -8,7 +8,7 @@
 #define MAX_LINE (1024)
 #define MAX_POINTS (50)
 
-typedef struct _person position;
+typedef struct _person* position;
 typedef struct _person {
 	char name[32];
 	char surname[32];
@@ -38,10 +38,10 @@ position CreatePerson(position head, char* name, char* surname, int birth_year) 
 		printf("Malloc failed\n");
 		return NULL;
 	}
-	strcpy(newPerson->name = name);
-	strcpy(newPerson->surname = surname);
-	newPerson.birth_year = birth_year;
-	newPerson.next = NULL;
+	strcpy(newPerson->name, name);
+	strcpy(newPerson->surname, surname);
+	newPerson->birth_year = birth_year;
+	newPerson->next = NULL;
 }
 int preprend_list(position head,char* name, char* surname, int birth_year) {
 	position new_person = NULL;
