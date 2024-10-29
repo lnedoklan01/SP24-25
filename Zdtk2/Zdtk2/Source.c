@@ -56,6 +56,8 @@ int menu(Position head);
 //funkcija wishedSurname uzima prezime koje je korisnik upisao i koristi ga u funkcijama koje brisu ili pronalaze osobu iz vezane liste
 char* wishedSurname();
 
+void sort(Position headptr);
+
 //funkcija main za argumente uzima argc(argument count) i argv(argument vector)
 //argc predstavlja broj stvari koje smo unjeli u terminalu (u ovom slucaju to su osobe koje tvore vezanu listu)
 //argv je niz koji sprema stvari koje smo unjeli kao string
@@ -202,40 +204,34 @@ int findPerson(Position head)
 }
 int deletePerson(Position head)
 {
-	if (head->next)
+	Position previous = NULL;
+	char* target_surname = wishedSurname();
+	while (head && strcmp(head->surname, target_surname) != 0)
 	{
-		Position previous = NULL;
-
-		while (head->next && strcmp(head->surname, wishedSurname()) != 0)
+		previous = head;
+		head = head->next;
+	}
+	if (head)
+	{
+		printPerson(head);
+		if (previous != NULL)
 		{
-			previous = head;
-			head = head->next;
-		}
-		if (previous->next && strcmp(head->surname, wishedSurname()) == 0)
-		{
-			printPerson(head);
 			previous->next = head->next;
-			free(head);
-			printf("Person deleted!\n");
 		}
-		else
-		{
-			perror("Can't find person with that surname!\n");
-			return EXIT_PROGRAM;
-		}
+		free(head);
+		printf("Person deleted!\n");
+		return EXIT_SUCCESS;
 	}
 	else
 	{
-		perror("Empty list!\n");
+		perror("Can't find person with that surname!\n");
+		return EXIT_FAILURE;
 	}
-
-	return EXIT_SUCCESS;
 }
 
 int printPerson(Position person)
 {
-	printf("Name: %s, surname: %s, birth year: %d, adress: %p\n",
-		person->name, person->surname, person->birthYear, person);
+	printf("Name: %s, surname: %s, birth year: %d\n",person->name, person->surname, person->birthYear);
 
 	return EXIT_SUCCESS;
 }
@@ -287,4 +283,24 @@ char* wishedSurname()
 	scanf(" %s", surname);
 
 	return surname;
+}
+void sort(Position headptr) {
+	Position current = headptr;
+
+	if (!current->next || !current->next->next) {
+		return;
+	}
+	while (1) {
+		current = headptr;
+		while (current->next->next) {
+			if (strcmp(current->next->surname, current->next->next->surname) > 0) {
+				Position first = current->next;
+				Position second = first->next;
+				first->next = second->next;
+				second->next = first;
+				current->next = second;
+			}
+			current = current->next;
+		}
+	}
 }
