@@ -112,7 +112,7 @@ int parseStringIntoPostfix(Position head, char* buffer, double* result)
     while (strlen(currentBuffer) > 0) {
         status = sscanf(currentBuffer, " %lf %n", &number, &numBytes);
         if (status != 1) {
-            sscanf(currentBuffer, " %c %n", &operation, &numBytes);
+            (void)sscanf(currentBuffer, " %c %n", &operation, &numBytes);
             status = popAndPerformOperation(head, operation, result);
 
             if (status != EXIT_SUCCESS) {
