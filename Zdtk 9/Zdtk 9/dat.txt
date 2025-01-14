@@ -1,0 +1,4 @@
+Prije funkcije (zad a)
+0 28 35 46 
+Nakon funkcije (zad b)
+0 0 0 35 112 
